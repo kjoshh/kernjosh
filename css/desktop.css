@@ -1,0 +1,998 @@
+.div-block-40.iubenv.window.visible {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+.div-block-40.iubenv.window.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.div-block-40.vre.window.visible {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+.div-block-40.vre.window.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.div-block-40.iubenv.window {
+  transition: box-shadow 0.2s, opacity 0.3s ease, transform 0.3s ease;
+}
+.div-block-40.vre.window {
+  transition: box-shadow 0.2s, opacity 0.3s ease, transform 0.3s ease;
+}
+.icon-textt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  /* Entspricht ungefähr 13pt */
+  font-weight: 400;
+  color: white;
+}
+.filtered {
+  filter: brightness(80%) grayscale(30%);
+}
+.div-block-40 {
+  -webkit-box-shadow: 0px 0px 1px 0px #000000,
+    0px 18px 32px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 1px 0px #000000, 0px 18px 32px 2px rgba(0, 0, 0, 0.3);
+}
+body {
+  overscroll-behavior: none;
+}
+/* Remove the default focus outline */
+[contenteditable="true"]:focus {
+  outline: none;
+}
+[contenteditable="true"] {
+  caret-color: #ffd60a;
+  /* Sets the blinking cursor color */
+}
+/* Customize selection background color for all browsers */
+[contenteditable="true"]::selection {
+  background-color: #867750 !important;
+  /* Custom highlight background color */
+  color: inherit !important;
+  /* Keeps the original text color */
+}
+/* Firefox-specific style to remove default light blue selection */
+[contenteditable="true"]::-moz-selection {
+  background-color: #867750 !important;
+  /* Custom highlight background for Firefox */
+  color: inherit !important;
+  /* Keeps the original text color */
+}
+/* Safari-specific style to ensure no default selection color */
+[contenteditable="true"]::selection {
+  background-color: #867750 !important;
+  color: inherit !important;
+}
+.progress {
+  width: 300px;
+  max-width: 85vw;
+  height: 4px;
+  position: absolute;
+  bottom: 20vh;
+  left: 50%;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.progress:after {
+  content: "";
+  display: block;
+  width: 0%;
+  /* Start at 0% */
+  height: 4px;
+  background: #fff;
+  animation: load 3s linear forwards;
+  /* Keep the final state */
+  animation-delay: 1s;
+  /* Delay the start by 0.5 seconds */
+}
+@-moz-keyframes load {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 5%;
+  }
+  20% {
+    width: 15%;
+  }
+  30% {
+    width: 25%;
+  }
+  40% {
+    width: 30%;
+  }
+  50% {
+    width: 44%;
+  }
+  60% {
+    width: 50%;
+  }
+  70% {
+    width: 72%;
+  }
+  80% {
+    width: 84%;
+  }
+  90% {
+    width: 92%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes load {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 5%;
+  }
+  20% {
+    width: 15%;
+  }
+  30% {
+    width: 25%;
+  }
+  40% {
+    width: 30%;
+  }
+  50% {
+    width: 44%;
+  }
+  60% {
+    width: 50%;
+  }
+  70% {
+    width: 72%;
+  }
+  80% {
+    width: 84%;
+  }
+  90% {
+    width: 92%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-o-keyframes load {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 5%;
+  }
+  20% {
+    width: 15%;
+  }
+  30% {
+    width: 25%;
+  }
+  40% {
+    width: 30%;
+  }
+  50% {
+    width: 44%;
+  }
+  60% {
+    width: 50%;
+  }
+  70% {
+    width: 72%;
+  }
+  80% {
+    width: 84%;
+  }
+  90% {
+    width: 92%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 5%;
+  }
+  20% {
+    width: 15%;
+  }
+  30% {
+    width: 25%;
+  }
+  40% {
+    width: 30%;
+  }
+  50% {
+    width: 44%;
+  }
+  60% {
+    width: 50%;
+  }
+  70% {
+    width: 72%;
+  }
+  80% {
+    width: 84%;
+  }
+  90% {
+    width: 92%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.container {
+  width: max-content;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  pointer-events: auto;
+  transform: translate(-50%, 0%);
+  padding-bottom: 12.5px;
+  padding-top: 7.5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: center;
+  background: rgba(52, 51, 47, 0.8);
+  /* Slightly transparent background */
+  backdrop-filter: blur(5px);
+  /* Adds a blur effect to the background */
+  -webkit-backdrop-filter: blur(5px);
+  /* For Safari support */
+  border: 0.25px solid #53514d;
+  border-radius: 15px;
+  transform-origin: center;
+  margin-bottom: 3px;
+}
+.dock {
+  display: flex;
+  justify-content: space-around;
+}
+.dock-item {
+  width: 50px;
+  height: 50px;
+  margin: 0 7.5px;
+  background: transparent;
+  color: #333;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 700ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform-origin: bottom;
+}
+.dock-item img {
+  width: 100%;
+  height: 100%;
+}
+.spotititi.visible {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+.spotititi.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.spotititi.window {
+  display: none;
+  width: 700px;
+  height: 450px !important;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: box-shadow 0.2s, opacity 0.3s ease, transform 0.3s ease;
+}
+.iframeembedspoit {
+  margin-top: 32px;
+}
+.mail-header.window-header.window-controls.spototo {
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  border-bottom: none;
+}
+/* Visibility Classes */
+.mail-wrapper.visible {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+.mail-wrapper.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+/* Main Mail Wrapper */
+.mail-wrapper {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 220px;
+  width: 600px;
+  height: 400px;
+  border: 1px solid #2c2c2e;
+  border-radius: 8px;
+  background: #1c1c1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: box-shadow 0.2s, opacity 0.3s ease, transform 0.3s ease;
+}
+/* Header Styling */
+.mail-header {
+  background: #2c2c2e;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #3a3a3c;
+}
+.mail-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: default;
+  pointer-events: default;
+}
+.mail-dot.red {
+  background: #ff453a;
+}
+.mail-dot.yellow {
+  background: #ffd60a;
+}
+.mail-dot.green {
+  background: #30d158;
+}
+/* Send Button Styling */
+.send-button {
+  background: none;
+  border: none;
+  cursor: default;
+  padding: 0;
+  color: #ffffff;
+  opacity: 0.75;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.send-button:hover {
+  color: #ffffff;
+  opacity: 1;
+  cursor: default;
+}
+.send-button.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.send-icon {
+  display: block;
+  cursor: default;
+}
+/* Spinner Styles */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: none;
+  /* Hidden by default */
+  margin-left: 10px;
+  /* Spacing between spinner and button content */
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Body Fields */
+.mail-body {
+  width: 100%;
+  padding: 52px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mail-field {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 10px;
+}
+.mail-field label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #d1d1d6;
+  text-align: left;
+}
+.mail-field input,
+.mail-field textarea {
+  background: #1c1c1e;
+  color: #ffffff;
+  border: none;
+  resize: none;
+  padding: 5px 0px;
+  font-size: 14px;
+  outline: none;
+}
+.mail-field textarea {
+  grid-column: span 2;
+  height: 150px;
+  padding: 8px 0px;
+}
+/* Disabled Fields */
+.mail-field input:disabled {
+  background: #3a3a3c;
+}
+.to-field {
+  width: max-content;
+  background: #007aff;
+  padding: 1px;
+  border-radius: 2.5px;
+  border: none;
+  color: #ffffff;
+  margin: 8px 0px;
+  resize: none;
+}
+.mail-field {
+  border-bottom: 1px solid #3a3a3c;
+}
+#last {
+  border-bottom: none;
+}
+/* Ensure Control Buttons are Positioned Relatively for Overlay Positioning */
+.control {
+  position: relative;
+  /* Added for overlay positioning */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: background-color 0.2s ease;
+  border: none;
+  /* Remove default button borders */
+  padding: 0;
+  /* Remove default button padding */
+}
+/* Overlay Icon Styles */
+.control::after {
+  content: "";
+  /* Default empty content */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  /* Center the icon and hide it */
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+  /* Allow clicks to pass through to the button */
+}
+/* Specific Overlay Icons for Each Control */
+.control.close::after {
+  background-image: url("images/desktop/closebutton.png");
+}
+.control.minimize::after {
+  background-image: url("images/desktop/minimizebutton.png");
+}
+.control.maximize::after {
+  background-image: url("images/desktop/maximizebutton.png");
+}
+/* Show Overlay Icons on Hover */
+.control:hover::after,
+.control:focus::after {
+  transform: translate(-50%, -50%) scale(1);
+  /* Scale up to show the icon */
+}
+/* Notification Styles */
+.notification {
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1000100010001000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  position: absolute;
+  display: none;
+  text-align: center;
+  background: #1c1c1e;
+  color: #fff;
+  font-size: 12px;
+  margin: auto;
+  border: 1px solid #595959;
+  padding: 10px;
+}
+.notification p {
+  margin: 0;
+  flex: 1;
+}
+.notification button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+/* Finder Wrapper */
+.finder-wrapper {
+  font-family: Arimo, sans-serif;
+  position: absolute;
+  top: 95px;
+  left: 40px;
+  width: 700px;
+  /* Adjust as needed */
+  height: 500px;
+  /* Adjust as needed */
+  border: 1px solid #2c2c2e;
+  /* Matches other windows */
+  border-radius: 8px;
+  background-color: #1c1c1e;
+  /* Dark background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: none;
+  /* Hidden by default */
+  flex-direction: column;
+  transition: box-shadow 0.2s, opacity 0.3s ease, transform 0.3s ease;
+}
+.window-header {
+  border-radius: 10px 10px 0px 0px;
+}
+/* Visibility Classes */
+.finder-wrapper.visible {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+.finder-wrapper.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+/* Finder Header */
+.finder-header {
+  background: #20211d;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #3a3a3c;
+  cursor: grab;
+  /* Draggable area */
+  user-select: none;
+  /* Prevent text selection during drag */
+  position: relative;
+}
+/* Finder Title */
+.finder-title {
+  font-size: 15px;
+  color: #eaeaea;
+  font-weight: 500;
+  margin-left: 8px;
+}
+/* Finder Body */
+.finder-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+/* Finder Sidebar */
+.finder-sidebar {
+  border-radius: 0px 0px 0px 10px;
+  font-size: 11px;
+  letter-spacing: 0.33;
+  color: #fff;
+  width: 200px;
+  background-color: #292927e3;
+  padding: 10px;
+  overflow-y: auto;
+}
+.finder-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.finder-sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  color: #ffffff;
+  cursor: default;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.finder-sidebar li.active {
+  background-color: #424240;
+}
+/* Finder Content */
+.finder-content {
+  flex: 1;
+  padding: 10px;
+  background-color: #1e1e1e;
+  overflow-y: auto;
+  border-radius: 0px 0px 10px 0px;
+}
+/* Updated Folder Icon */
+.folder-icon {
+  width: 55px;
+  /* Adjust the size as needed */
+  height: 55px;
+  background-image: url("images/foldermac.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+.sidebar-icon {
+  font-size: 11px;
+  letter-spacing: 0.33px;
+  color: #fff;
+  margin-right: 6px;
+  margin-bottom: 2.5px;
+  margin-left: 2px;
+  width: 14px;
+  height: 14px;
+  background-image: url("images/foldermac.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+.jpg-icon {
+  display: inline-flex;
+  /* Enables flexbox for centering */
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  width: 55px;
+  /* Adjust the size as needed */
+  height: 55px;
+  background-color: transparent;
+  /* Optional: Set if needed */
+}
+.jpg-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 2.5px solid #eaeaea;
+  /* Border around the image */
+}
+.web-icon {
+  width: 55px;
+  /* Adjust the size as needed */
+  height: 55px;
+  background-image: url("images/HTTPWeblocFile.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+.finder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+}
+.finder-item {
+  border-radius: 5px;
+  font-size: 11px;
+  letter-spacing: 0.33px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  cursor: default;
+  transition: background-color 0.2s ease;
+}
+.finder-item:hover {
+  background-color: #424240;
+}
+.folder-name {
+  margin-top: 8px;
+  font-size: 11px;
+  text-align: center;
+  word-wrap: break-word;
+}
+/* Folder Content Sections */
+.folder-content {
+  flex: 1;
+  padding: 10px;
+  background-color: #1c1c1e;
+  overflow-y: auto;
+}
+.folder-content .finder-header-inner {
+  padding: 10px;
+  background-color: #2c2c2e;
+  border-bottom: 1px solid #3a3a3c;
+}
+.folder-title {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+}
+/* Hide sections by default */
+.finder-section {
+  padding: 0px;
+  display: none;
+}
+.finder-section.active {
+  padding: 0px;
+  background-color: transparent;
+  display: block;
+}
+/* Scrollbar Styling (Optional for Better Aesthetics) */
+.finder-sidebar::-webkit-scrollbar,
+.finder-content::-webkit-scrollbar,
+.folder-content::-webkit-scrollbar {
+  width: 8px;
+}
+.finder-sidebar::-webkit-scrollbar-track,
+.finder-content::-webkit-scrollbar-track,
+.folder-content::-webkit-scrollbar-track {
+  background: #2c2c2e;
+}
+.finder-sidebar::-webkit-scrollbar-thumb,
+.finder-content::-webkit-scrollbar-thumb,
+.folder-content::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+/* Image Display Wrapper */
+.image-display-wrapper {
+  font-family: Arimo, sans-serif;
+  position: absolute;
+  top: 100px;
+  /* Adjusted to prevent overlap with Finder window */
+  left: 60px;
+  width: 600px;
+  /* Adjust as needed */
+  height: 600px;
+  /* Adjust as needed */
+  border: 1px solid #2c2c2e;
+  /* Matches other windows */
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(41, 41, 41, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: none;
+  /* Hidden by default */
+  flex-direction: column;
+  transition: box-shadow 0.2s, opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2000;
+  /* Ensure it appears above other windows */
+}
+.image-display-header {
+  padding: 10px 15px;
+  display: flex;
+  height: 30px;
+  align-items: center;
+  gap: 8px;
+  cursor: grab;
+  /* Draggable area */
+  user-select: none;
+  /* Prevent text selection during drag */
+  position: relative;
+}
+/* Visibility Classes (Reused from Finder) */
+.image-display-wrapper.visible {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+.image-display-wrapper.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+/* Image Display Title */
+.image-display-title {
+  font-size: 15px;
+  color: #eaeaea;
+  font-weight: 500;
+  letter-spacing: 0.33px;
+  margin-left: 8px;
+}
+/* Image Display Body */
+.image-display-body {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* Displayed Image */
+#displayed-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  padding: 2.5px;
+}
+.window-header {
+  cursor: move;
+  /* Indicate draggable area */
+  user-select: none;
+  /* Prevent text selection during drag */
+}
+.window-header.dragging {
+  cursor: -webkit-grabbing;
+  /* Safari */
+  cursor: grabbing;
+}
+.window {
+  min-width: 550px;
+  /* Added minimum width */
+  min-height: 350px;
+  /* Added minimum height */
+}
+.window.nwse-resize {
+  cursor: nwse-resize;
+  /* Diagonal resize cursor */
+}
+.window.nesw-resize {
+  cursor: nesw-resize;
+  /* Diagonal resize cursor */
+}
+.window.ns-resize {
+  cursor: ns-resize;
+  /* Vertical resize cursor */
+}
+.window.ew-resize {
+  cursor: ew-resize;
+  /* Horizontal resize cursor */
+}
+/* Finder Wrapper */
+.finder-wrapper.bin {
+  font-family: Arimo, sans-serif;
+  position: absolute;
+  top: 95px;
+  left: 40px;
+  width: 700px;
+  /* Adjust as needed */
+  height: 500px;
+  /* Adjust as needed */
+  border: 1px solid #2c2c2e;
+  /* Matches other windows */
+  border-radius: 8px;
+  background-color: #1c1c1e;
+  /* Dark background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  /* display: none; Hidden by default */
+  flex-direction: column;
+  transition: box-shadow 0.2s, opacity 0.3s ease, transform 0.3s ease;
+}
+.window-header.bin {
+  border-radius: 10px 10px 0px 0px;
+}
+/* Visibility Classes */
+.finder-wrapper.bin.visible {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+.finder-wrapper.bin.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+/* Finder Header */
+.finder-header.bin {
+  background: #20211d;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #3a3a3c;
+  cursor: grab;
+  /* Draggable area */
+  user-select: none;
+  /* Prevent text selection during drag */
+  position: relative;
+}
+/* Finder Title */
+.finder-title.bin {
+  font-size: 15px;
+  color: #eaeaea;
+  font-weight: 500;
+  margin-left: 8px;
+}
+/* Finder Body */
+.finder-body.bin {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+/* Finder Content */
+.finder-content.bin {
+  flex: 1;
+  padding: 10px;
+  background-color: #1e1e1e;
+  overflow-y: auto;
+  border-radius: 0px 0px 10px 0px;
+}
+.finder-grid.bin {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+}
+.finder-item.bin {
+  border-radius: 5px;
+  font-size: 11px;
+  letter-spacing: 0.33px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  cursor: default;
+  transition: background-color 0.2s ease;
+}
+.finder-item.bin:hover {
+  background-color: #424240;
+}
+/* Folder Content Sections */
+.folder-content.bin {
+  flex: 1;
+  padding: 10px;
+  background-color: #1c1c1e;
+  overflow-y: auto;
+}
+.folder-content.bin .finder-header-inner.bin {
+  padding: 10px;
+  background-color: #2c2c2e;
+  border-bottom: 1px solid #3a3a3c;
+}
+.folder-title.bin {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+}
+/* Hide sections by default */
+.finder-section.bin {
+  padding: 0px;
+  display: none;
+}
+.finder-section.bin.active {
+  padding: 0px;
+  background-color: transparent;
+  display: block;
+}
+/* Scrollbar Styling (Optional for Better Aesthetics) */
+.finder-sidebar.bin::-webkit-scrollbar,
+.finder-content.bin::-webkit-scrollbar,
+.folder-content.bin::-webkit-scrollbar {
+  width: 8px;
+}
+.finder-sidebar.bin::-webkit-scrollbar-track,
+.finder-content.bin::-webkit-scrollbar-track,
+.folder-content.bin::-webkit-scrollbar-track {
+  background: #2c2c2e;
+}
+.finder-sidebar.bin::-webkit-scrollbar-thumb,
+.finder-content.bin::-webkit-scrollbar-thumb,
+.folder-content.bin::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}

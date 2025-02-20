@@ -1,0 +1,130 @@
+.music-player-container {
+  position: absolute;
+  bottom: 2.5vmin;
+  left: 2.5vmin;
+  width: 290px;
+  transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 1s ease-in-out;
+}
+.music-player-container.hide {
+  width: 50px;
+  border-radius: 5px;
+}
+.music-player-container.hidden {
+  opacity: 0;
+}
+.music-player-container.visible {
+  opacity: 1;
+}
+.music-player-container.hide .track-info,
+.music-player-container.hide .track-nav {
+  transition: all 0s ease;
+  opacity: 0;
+}
+.toggle-player {
+  position: absolute;
+  top: -11px;
+  right: -12.4px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 0.25s ease;
+  /* Apply transition here */
+}
+.toggle-player:hover {
+  opacity: 1;
+}
+/* Ensure rotation happens smoothly */
+.music-player-container.hide .toggle-player {
+  transform: rotate(51deg);
+  /* Rotate by 180deg when hide is active */
+}
+.toggle-player img {
+  width: 100%;
+  height: 100%;
+}
+.sound-bars {
+  flex: 1;
+  width: 27.5px;
+  height: 27.5px;
+  margin: 0 11.25px;
+  opacity: 0.8;
+}
+/* Player background when visible (open) */
+.player {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  border-radius: 5px;
+  background: rgba(250, 250, 250, 0.864);
+  /* Original background when open */
+  backdrop-filter: blur(10px);
+  padding: 0rem 1.275rem 0rem 0px;
+  transition: background 0.5s ease, backdrop-filter 0.5s ease;
+  /* Transition for background and blur */
+}
+/* Player background when hidden (closed) */
+.music-player-container.hide .player {
+  background: rgba(100, 100, 100, 0.6);
+  /* New background color when player is hidden */
+  backdrop-filter: none;
+  /* Optional: Remove blur when hidden */
+}
+.track-info {
+  flex: 2;
+  margin-right: 0.85rem;
+  transition: all 0.25s ease;
+  pointer-events: auto;
+  margin-left: 5px;
+}
+.track-name {
+  font-size: 18px;
+  letter-spacing: -1.5px;
+  font-family: "Neueeigene";
+  margin-top: 3px;
+  color: black;
+  cursor: pointer;
+}
+.track-artist {
+  font-family: "Neueeigene";
+  letter-spacing: -1.5px;
+  font-size: 16px;
+  opacity: 0.8;
+  color: black;
+  cursor: pointer;
+}
+.track-nav {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+.playpause-track,
+.prev-track,
+.next-track {
+  padding: 4.25px 6.5px;
+  opacity: 0.8;
+}
+.playpause-track img,
+.prev-track img,
+.next-track img {
+  width: 16px;
+  /* Adjust size for your icons */
+  height: 15px;
+}
+.playpause-track img[src*="pauseaudio.png"] {
+  width: 16px;
+  /* Smaller size for the pause icon */
+  height: 13px;
+  object-fit: contain;
+}

@@ -1,0 +1,163 @@
+/* Global Loader Styles */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#image-loader {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  /* Height of the loader bar */
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Background color of the loader track */
+  overflow: hidden;
+  display: none;
+  /* Hidden by default */
+  z-index: 1003;
+  /* Ensure it's above other elements */
+}
+#loader-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #3498db;
+  /* Color of the loader bar */
+  transition: width 0.2s ease;
+  /* Smooth transition for width changes */
+}
+.header-diary {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 35vh;
+  margin-bottom: 0px;
+  transition: margin-top 0.8s ease-out, margin-bottom 0.8s ease-out;
+}
+.header-diary.first-click-active {
+  margin-top: calc(0vh + -40px);
+  margin-bottom: 25px;
+  transition: margin-top 0.8s ease-out, margin-bottom 0.8s ease-out,
+    opacity 0.5s ease-in;
+}
+.header-diary img {
+  height: 100%;
+  object-fit: contain;
+}
+#year-navigation.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 0;
+}
+.navigation {
+  display: flex;
+  color: #333;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+.navigation .year-link,
+.month-link {
+  cursor: default;
+  padding: 0px;
+  color: #333;
+  font-family: Neueeigene;
+  font-size: 19px;
+  letter-spacing: -1.5px;
+  -webkit-text-stroke: 0.25px #333;
+  /* text-stroke: 0.25px #333; */
+  text-align: center;
+  transition: font-weight 0.3s;
+}
+.year-section,
+.month-section {
+  display: none;
+}
+.month-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 0.5s ease;
+  /* Smooth transition for any layout changes */
+}
+.image-container img {
+  max-height: 150px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #a7a7a7;
+  border-radius: 5px;
+}
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  /* Background color for the fade effect */
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* Initially hidden */
+  z-index: 1000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+.navigation .year-link:hover,
+.month-link:hover {
+  font-weight: bold;
+}
+/* Active link styles */
+.navigation .year-link.active,
+.month-link.active {
+  font-weight: bold;
+}
+#grainii.ofbnrfjoneroirfn {
+  position: absloute !important;
+}
+img.lazy-image {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, filter 0.3s ease-in-out;
+}
+img.lazy-image:hover {
+  filter: brightness(85%);
+}
+img.lazy-image.loaded {
+  opacity: 1;
+}
+
+#Ebene_1 {
+  bottom: 20px;
+  position: absolute;
+  opacity: 0.85;
+}
+.cls-1 {
+  fill: none;
+  /* Ensure the path is not filled */
+  stroke: #333;
+  /* Loader bar color */
+  stroke-width: 1.25;
+  /* Thickness of the loader bar */
+  stroke-linecap: round;
+  /* Rounded ends */
+}

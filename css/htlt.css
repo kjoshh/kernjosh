@@ -1,0 +1,40 @@
+::-webkit-scrollbar {
+  display: none;
+}
+#vidcenter1 {
+  position: absolute;
+  left: -50%;
+  transform: translate(50vw);
+}
+body {
+  overscroll-behavior: none;
+}
+.hidden-text {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+#backfo {
+  opacity: 0.75;
+  transition: opacity 0.15s ease-in-out;
+}
+#backfo:hover {
+  opacity: 1;
+}
+.custom-strikethrough {
+  position: relative;
+  text-decoration: none;
+}
+.custom-strikethrough::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: currentColor;
+  bottom: 45%;
+}
+.video-background {
+  position: relative;
+  width: 102vh;
+  height: auto;
+}

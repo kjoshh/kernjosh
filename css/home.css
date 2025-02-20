@@ -1,0 +1,402 @@
+.imgbghome {
+  transition: opacity 0.1s ease-in-out;
+}
+.link {
+  -webkit-text-stroke: 1px black !important;
+  letter-spacing: -2.5px !important;
+}
+.link:hover {
+  cursor: pointer;
+}
+.about-page {
+  perspective: 2500px;
+  /* Enables 3D depth */
+}
+.video-page {
+  perspective: 3000px;
+  /* Enables 3D depth */
+}
+.about-wrapper {
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+}
+.video-diviviv {
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+}
+#number {
+  font-size: 24px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 50%;
+  z-index: 9999999;
+  transform: translate(-50%, -50%);
+  /* Center the element */
+  color: black;
+  font-family: Neueeigene;
+  letter-spacing: -1.5px;
+  -webkit-text-stroke: 1px black;
+}
+/* Add any additional styles here */
+#terminal {
+  background: #031e11;
+  color: #89e142;
+  font-family: monospace;
+  padding: 10px;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  pointer-events: auto;
+  text-shadow: 0 0.2rem 1rem #89e142;
+}
+/* flicker animation taken from http://goonhub.com/secret */
+#terminal::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.2);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.12s infinite;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.552;
+  }
+  5% {
+    opacity: 0.48287;
+  }
+  10% {
+    opacity: 0.59134;
+  }
+  15.0% {
+    opacity: 0.79543;
+  }
+  20% {
+    opacity: 0.75134;
+  }
+  25% {
+    opacity: 0.1956;
+  }
+  30.0% {
+    opacity: 0.90687;
+  }
+  35% {
+    opacity: 0.122;
+  }
+  40% {
+    opacity: 0.62254;
+  }
+  45% {
+    opacity: 0.56977;
+  }
+  50% {
+    opacity: 0.9925;
+  }
+  55.0% {
+    opacity: 0.55487;
+  }
+  60.0% {
+    opacity: 0.16607;
+  }
+  65% {
+    opacity: 0.12353;
+  }
+  70% {
+    opacity: 0.2214;
+  }
+  75% {
+    opacity: 0.67908;
+  }
+  80% {
+    opacity: 0.97163;
+  }
+  85.0% {
+    opacity: 0.1275;
+  }
+  90% {
+    opacity: 0.37186;
+  }
+  95% {
+    opacity: 0.24475;
+  }
+  100% {
+    opacity: 0.37221;
+  }
+}
+#output {
+  white-space: pre-wrap;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}
+#input-line {
+  display: flex;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+}
+.prompt {
+  color: #89e142;
+  font-weight: normal;
+  text-shadow: 0 0.2rem 1rem #89e142;
+}
+/* Change color of the word 'Exit' */
+.exit-word {
+  color: #fff;
+  /* Replace with your desired color */
+}
+/* Change color of the word 'Help' */
+.help-word {
+  color: #fff;
+}
+#command-input {
+  background: none;
+  border: none;
+  color: #89e142;
+  font-family: monospace;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  caret-color: transparent;
+  /* Hides the default caret */
+  text-shadow: 0 0.2rem 1rem #89e142;
+}
+.input {
+  text-shadow: 0 0.2rem 1rem #89e142;
+}
+#cursor {
+  font-size: 12px;
+  color: #89e142;
+  background-color: #89e142 !important;
+  position: absolute;
+  height: 1.5em !important;
+  width: 10px !important;
+  border-radius: 0 !important;
+  animation: blinker 1s steps(2, start) infinite;
+  z-index: 2;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+#hidden-measure {
+  visibility: hidden;
+  position: absolute;
+  white-space: pre;
+  font-family: monospace;
+  /* Match the input field's font */
+  font-size: 14px;
+  /* Match the input field's font size */
+  left: 0;
+  top: 0;
+}
+.scanlines {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 70%,
+    rgba(0, 0, 0, 0.6)
+  );
+  background-size: 100% 0.3rem;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0.35;
+}
+/* noise solution based on Temani Afif https://codepen.io/t_afif/pen/RwyqLKZ */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2000;
+  opacity: 0.075;
+  pointer-events: none;
+  background: repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px
+      2500px,
+    repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 50%/2500px
+      2500px;
+  background-blend-mode: difference;
+  animation: shift 0.2s infinite alternate;
+}
+@keyframes shift {
+  100% {
+    background-position: 50% 0, 50% 60%;
+  }
+}
+.outsidebutton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  opacity: 0;
+  background: transparent;
+  z-index: 100000;
+  transition: all 0.2s ease;
+}
+#activate-terminal {
+  background: transparent;
+}
+#activate-terminal img {
+  cursor: default;
+  background: transparent;
+  height: 18.5px;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+#errortext {
+  pointer-events: none;
+  display: none;
+  color: red;
+  font-size: 9px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+#activate-terminal img:hover {
+  opacity: 1;
+}
+#outerrr {
+  background: #031e11;
+  width: 100vw;
+  height: 100vh;
+}
+#outerrr::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.2);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.12s infinite;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.552;
+  }
+  5% {
+    opacity: 0.48287;
+  }
+  10% {
+    opacity: 0.59134;
+  }
+  15.0% {
+    opacity: 0.79543;
+  }
+  20% {
+    opacity: 0.75134;
+  }
+  25% {
+    opacity: 0.1956;
+  }
+  30.0% {
+    opacity: 0.90687;
+  }
+  35% {
+    opacity: 0.122;
+  }
+  40% {
+    opacity: 0.62254;
+  }
+  45% {
+    opacity: 0.56977;
+  }
+  50% {
+    opacity: 0.9925;
+  }
+  55.0% {
+    opacity: 0.55487;
+  }
+  60.0% {
+    opacity: 0.16607;
+  }
+  65% {
+    opacity: 0.12353;
+  }
+  70% {
+    opacity: 0.2214;
+  }
+  75% {
+    opacity: 0.67908;
+  }
+  80% {
+    opacity: 0.97163;
+  }
+  85.0% {
+    opacity: 0.1275;
+  }
+  90% {
+    opacity: 0.37186;
+  }
+  95% {
+    opacity: 0.24475;
+  }
+  100% {
+    opacity: 0.37221;
+  }
+}
+.scanlines2 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 70%,
+    rgba(0, 0, 0, 0.6)
+  );
+  background-size: 100% 0.3rem;
+  position: fixed;
+  pointer-events: none;
+  opacity: 1;
+}
+.noise2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2000;
+  opacity: 0.3;
+  pointer-events: none;
+  background: repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px
+      2500px,
+    repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 50%/2500px
+      2500px;
+  background-blend-mode: difference;
+  animation: shift 0.2s infinite alternate;
+}
+@keyframes shift {
+  100% {
+    background-position: 50% 0, 50% 60%;
+  }
+}
+#path-svg {
+  width: 15%;
+  height: auto;
+  margin-top: -25px;
+}
+#animatedPath {
+  stroke: black;
+  stroke-width: 2;
+  fill: none;
+}

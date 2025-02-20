@@ -1,0 +1,62 @@
+/* removing scroll bar(vertical) */
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  overscroll-behavior: none;
+}
+marker:after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.overlay.active {
+  display: block;
+}
+.clicklistener {
+  z-index: 999;
+}
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  /* Background color for the fade effect */
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* Initially hidden */
+  z-index: 99999999999999999999999999999999999999999999999999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+.crossfm,
+.otherlinks,
+.crosssyofuckme,
+.backlink {
+  opacity: 0.75;
+  transition: opacity 0.15s ease-in-out;
+}
+.crossfm:hover,
+.otherlinks:hover,
+.crosssyofuckme:hover,
+.backlink:hover {
+  opacity: 1;
+}

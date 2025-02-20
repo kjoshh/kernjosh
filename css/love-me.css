@@ -1,0 +1,138 @@
+body {
+  overscroll-behavior: none;
+}
+.cross-absolute,
+.image-42.edw,
+.cross-absolute.inside,
+#closehuette,
+.otherlinks,
+.backlink {
+  opacity: 0.75;
+  transition: opacity 0.15s ease-in-out;
+}
+.image-42.edw:hover,
+.cross-absolute:hover,
+.cross-absolute.inside:hover,
+#closehuette:hover,
+.otherlinks:hover,
+.backlink:hover {
+  opacity: 1;
+}
+.link-10 {
+  transition: -webkit-text-stroke-width 0.3s ease;
+  /* Smooth transition */
+}
+canvas {
+  cursor: grab;
+}
+canvas:active {
+  cursor: grabbing;
+}
+#threeModal.show {
+  display: flex;
+  opacity: 1;
+}
+.overlay.active {
+  display: block;
+}
+.clicklistener {
+  z-index: 999;
+}
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  /* Background color for the fade effect */
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* Initially hidden */
+  z-index: 99999999999999999999999999999999999999999999999999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+.track-name {
+  pointer-events: none;
+}
+.track-artist {
+  pointer-events: none;
+}
+.track-info {
+  pointer-events: none;
+}
+.imgmouse,
+.lovemeembbbb {
+  transition: opacity 0.1s ease;
+  /* Optional: Add a smooth transition */
+}
+.hidden {
+  display: none;
+}
+.headertext {
+  /* opacity: 0; */
+  margin: 0;
+  font-size: 22px;
+  -webkit-text-stroke-width: 0.75px;
+}
+.password-container {
+  font-family: Neueeigene;
+  letter-spacing: -1.5px;
+  margin-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+.password-container a {
+  color: black;
+  text-decoration: none;
+}
+.passwordmain {
+  /* opacity: 0; */
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+}
+#checkimg {
+  height: 15px;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+#checkimg:hover {
+  height: 15px;
+  opacity: 1;
+}
+.submitform {
+  /* opacity: 0; */
+  font-size: 17px;
+  -webkit-text-stroke-width: 0.5px;
+}
+#hintText {
+  font-size: 19px;
+  -webkit-text-stroke-width: 0.5px;
+}
+input:focus {
+  outline: black;
+}
+#secondhint {
+  pointer-events: none;
+}
+.hinttextdiv {
+  width: 250px;
+  text-align: left;
+  margin-left: 5px;
+}

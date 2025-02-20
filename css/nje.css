@@ -1,0 +1,34 @@
+body {
+  overscroll-behavior: none;
+}
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  background-color: transparent;
+  /* Background color for the fade effect */
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* Initially hidden */
+  z-index: 99999999999999999999999999999999999999999999999999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+#closemap,
+.map,
+.backlink {
+  opacity: 0.75;
+  transition: opacity 0.15s ease-in-out;
+}
+#closemap:hover,
+.map:hover,
+.backlink:hover {
+  opacity: 1;
+}
